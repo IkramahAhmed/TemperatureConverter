@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 50px 100px;
+        }
+        h1{
+            text-align: center;
+        }
+        #container{
+            text-align: center;
+            background-color: rgb(13, 107, 124);
+            padding: 40px;
+        }
+        .input-div{
+            display: inline-block;
+        }
+        .inp{
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            width: 250px;
+            text-align: center;
+        }
+        label{
+            font-size: 22px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <div id="container">
+        <div class="input-div">
+            <label >Celcius</label><br>
+            <input type="number" value="0" onin id="cel"  class="inp">
+        </div>
+        <div class="input-div">
+            <label >Farenheit</label><br>
+            <input type="number" value="32" id="fah"  class="inp">
+        </div>
+
+    </div>
+
+    <script>
+        
+       
+        let fah= document.getElementById("fah");
+            let cel= document.getElementById("cel");
+        
+        cel.addEventListener('input',function(){
+               let c=this.value;
+               let f=(c * 9/5) + 32;
+              
+
+                  if(!Number.isInteger(f)){
+                    f = f.toFixed(4);
+                  }
+                  fah.value=f;
+        });
+
+            fah.addEventListener('input',function(){
+                let c=this.value;
+                let fa=(c-32)*5/9;
+               
+                if(!Number.isInteger(fa)){
+                    fa = fa.toFixed(4);
+                  }
+                  cel.value=fa;
+            });
+            //console.log("cell changed");
+        
+      
+          
+          
+      
+
+    </script>
+</body>
+</html>
